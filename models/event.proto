@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package models;
+
+message Event {
+    string name = 1;
+    string value = 2;
+}

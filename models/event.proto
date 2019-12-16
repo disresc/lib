@@ -3,6 +3,13 @@ syntax = "proto3";
 package models;
 
 message Event {
-    string name = 1;
-    string value = 2;
+    string source = 1;
+    int64 timestamp = 2;
+    repeated EventItem items = 3;
+}
+
+message EventItem {
+    string Transmitter = 1;
+    string Metric = 2;
+    string Value = 3;
 }

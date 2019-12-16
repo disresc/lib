@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package models;
+
+message Request {
+    int64 timeout = 1;
+    string source = 2;
+    string transmitter = 3;
+    uint32 interval = 4;
+}

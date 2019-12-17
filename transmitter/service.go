@@ -68,6 +68,9 @@ func (service *Service) handleRequests(ctx context.Context, request *models.Requ
 	requesthandler, found := service.findRequesthandler(request)
 	if !found {
 		// create new request handler
+		if service.requestCallback == nil {
+			return nil
+		}
 		acceptRequest := service.requestCallback(request)
 		if acceptRequest {
 			log.Infof("DisResc transmitter accepts request %s", request.String())
